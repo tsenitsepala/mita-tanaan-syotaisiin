@@ -1,8 +1,8 @@
-console.log("app.js ladattu ✅");
+console.log("app.js ladattu ");
 
 const result = document.getElementById("result");
 
-/* ================= HISTORIA ================= */
+// Tallentaa reseptin nimen ja ajan localStorageen
 function saveHistory(foodName) {
   const history = JSON.parse(localStorage.getItem("foodHistory")) || [];
   history.push({
@@ -11,7 +11,7 @@ function saveHistory(foodName) {
   });
   localStorage.setItem("foodHistory", JSON.stringify(history));
 }
-
+// Näyttää tallennetut arvonnat Historia-näkymässä
 function renderHistory() {
   const list = document.getElementById("historyList");
   list.innerHTML = "";
@@ -34,7 +34,7 @@ function clearHistory() {
   renderHistory();
 }
 
-/* ================= KATEGORIAT ================= */
+
 const categories = {
   ihan_sama: ["Beef", "Chicken", "Vegetarian"],
   kevytta: ["Vegetarian"],
@@ -43,7 +43,7 @@ const categories = {
   yllata: ["Beef", "Chicken", "Vegetarian", "Dessert"]
 };
 
-/* ================= API ================= */
+// Hakee listan reseptejä kategorian perusteella
 async function getMealsByCategory(category) {
   const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
@@ -60,7 +60,7 @@ async function getMealById(id) {
   return data.meals[0];
 }
 
-/* ================= EHDOTA ================= */
+//Ehdotus
 async function suggestRecipe(categoryArray) {
   const category =
     categoryArray[Math.floor(Math.random() * categoryArray.length)];
@@ -93,7 +93,7 @@ async function suggestRecipe(categoryArray) {
   saveHistory(meal.strMeal);
 }
 
-/* ================= NAPIT ================= */
+//Napit
 document
   .querySelectorAll("#categories button[data-category]")
   .forEach(btn => {
@@ -106,7 +106,7 @@ document.getElementById("easyBtn").addEventListener("click", () => {
   window.open("https://wolt.com", "_blank");
 });
 
-/* ================= TOP 20 ================= */
+//Inspiroidu
 async function loadTop50() {
   const grid = document.getElementById("topGrid");
   grid.innerHTML = "";
@@ -128,7 +128,7 @@ async function loadTop50() {
   }
 }
 
-/* ================= TABIT ================= */
+//Tabit
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
     document.querySelectorAll(".tab")
