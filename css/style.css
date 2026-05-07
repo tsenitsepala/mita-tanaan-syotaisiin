@@ -1,0 +1,269 @@
+/* =====================
+   RESET
+===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =====================
+   BASE
+===================== */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
+  color: #232323;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =====================
+   NAV / HEADER
+===================== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.brand span {
+  font-weight: 800;
+}
+
+.brand::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 3px;
+  background: #111;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.tabs {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.tab {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.tab.active {
+  color: #000;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: #111;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  height: 420px;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.45)
+    ),
+    url("../images/hero.jpg") center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  max-width: 520px;
+  transform: translate(calc(-20% + 2cm));
+  color: #fff;
+}
+
+.hero-text p {
+  font-family: "Playfair Display", serif;
+  font-size: 2.1rem;
+  line-height: 1.35;
+  font-weight: 500;
+  text-align: left;
+}
+
+.hero-text em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+/* =====================
+   CONTENT / VIEWS
+===================== */
+.content {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+  background: #fff;
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* =====================
+   HEADINGS
+===================== */
+h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.muted {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+/* =====================
+   GENERATOR
+===================== */
+#generator h2,
+#generator .muted {
+  text-align: center;
+}
+
+/* =====================
+   CATEGORY GRID
+===================== */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 600px;
+  margin: 2rem auto 0;
+}
+
+.category-grid button {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #f2f2f2;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.category-grid button:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* =====================
+   RESULT
+===================== */
+.result {
+  margin-top: 2rem;
+}
+
+.result img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+/* =====================
+   HISTORY
+===================== */
+#historyList {
+  list-style: none;
+  margin: 1.5rem 0;
+}
+
+#historyList li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =====================
+   TOP GRID (20)
+===================== */
+.top-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.top-grid a {
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.top-grid img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-text {
+    transform: none;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .hero-text p {
+    text-align: center;
+  }
+}

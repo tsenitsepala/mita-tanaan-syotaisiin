@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Mitä tänään syötäisiin?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTTI -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="brand">
+    <span>Mitä</span> tänään syötäisiin?
+  </div>
+
+  <nav class="tabs">
+    <button class="tab active" data-view="generator">Arvonta</button>
+    <button class="tab" data-view="top">Inspiroidu</button>
+    <button class="tab" data-view="history">Historia</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p>
+      Kun päätöksenteko on<br>
+      <em>vaikeampaa kuin kokkaaminen.</em>
+    </p>
+  </div>
+</section>
+
+<main class="content">
+
+  <!-- ARVONTA -->
+  <section id="generator" class="view active">
+    <h2>Mikä fiilis?</h2>
+    <p class="muted">Katsotaan mitä löytyy!</p>
+
+    <div id="categories" class="category-grid">
+      <button data-category="ihan_sama">Ihan sama</button>
+      <button data-category="kevytta">Kevyttä</button>
+      <button data-category="yllata">Yllätä minut</button>
+      <button data-category="herkkupaiva">Herkkupäivä</button>
+      <button data-category="kasviksia">Pelastetaan maailma</button>
+      <button id="easyBtn">Jotain helppoa</button>
+    </div>
+
+    <div id="result" class="result"></div>
+  </section>
+
+  <!-- TOP 20 -->
+  <section id="top" class="view">
+    <h2>Inspiroidu</h2>
+    <p class="muted">Uusia ideoita sivua päivittämällä</p>
+    <div id="topGrid" class="top-grid"></div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section id="history" class="view">
+    <h2>Historia</h2>
+    <p class="muted">Aiemmat ehdotukset</p>
+    <ul id="historyList"></ul>
+    <button onclick="clearHistory()">Tyhjennä historia</button>
+  </section>
+
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
